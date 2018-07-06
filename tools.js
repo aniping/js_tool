@@ -51,6 +51,49 @@
 	}
 
 
+	//滚动条的兼容性
+	function getScrollOffset(){
+		if(window.pageXOffset){
+			return{
+				x : window.pageXOffset,
+				y : window.pageYOffset
+			}
+		}
+		else {
+			return{
+				x : document.body.scrollLeft + document.documentElement.scrollLeft,
+				y : document.body.scrollTop + document.documentElement.scrollTop
+			}
+		}
+	}
+
+
+	//可视区域大小兼容
+	function getViewPOrtoffset(){
+		if(window.innerWidth){
+			return {
+				w : window.innerWidth,
+				h : window.innerHeight
+			}
+		}
+		else{
+			if(document.compatMode === "BackCompat"){
+				return {
+					w : document.body.clientWidth,
+					h : document.body.clientHeight
+				}
+			}
+			else{
+				return {
+					w : document.documentElement.clientWidth,
+					h : document.documentElement.clientHeight
+				}
+			}
+
+		}
+	}
+
+
 
 
 </script>

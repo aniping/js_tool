@@ -1,0 +1,34 @@
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	function getViewPOrtoffset(){
+		if(window.innerWidth){
+			return {
+				w : window.innerWidth,
+				h : window.innerHeight
+			}
+		}
+		else{
+			if(document.compatMode === "BackCompat"){
+				return {
+					w : document.body.clientWidth,
+					h : document.body.clientHeight
+				}
+			}
+			else{
+				return {
+					w : document.documentElement.clientWidth,
+					h : document.documentElement.clientHeight
+				}
+			}
+
+		}
+	}
+	</script>
+</body>
+</html>
